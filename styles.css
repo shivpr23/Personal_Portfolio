@@ -100,7 +100,7 @@ a{
 	position: absolute;
 	left: 0;
 	top: 95%;
-	width: 145px;
+	width: 200px;
 	height: 1px;
 	background-color: black;
 }
@@ -161,8 +161,9 @@ li a:hover{
     position: absolute;
     top: 20%;
     left: 40%;
-    text-align: left;
+    text-align: left; 
 }
+
 .para{
 	position: absolute;
 	top: 70%;
@@ -512,80 +513,146 @@ li a:hover{
 	}
 }
 /* projects */
-#projects{
-	width: 100%;
-	height: 80vh;
-	background-color: black;
-	position: relative;
-	text-align: center;
+#projects {  
+    width: 100%;  
+    height: auto; /* Responsive height */  
+    background-color: black;  
+    position: relative;  
+    text-align: center;  
+    padding: 50px 0; /* Added spacing */  
+    overflow: hidden; /* Prevent unwanted overflow */  
+    z-index: 1; /* Ensures the content is above the cover */  
+}  
+
+.cover {  
+    width: 100%;  
+    height: 100%;  
+    background-color: cadetblue;  
+    transform: skewY(-3deg);  
+    position: absolute;  
+    top: 0;  
+    left: 0;  
+    z-index: 0; /* Stays behind the content */  
+    pointer-events: none; /* Prevents interaction issues */  
+}  
+
+.project-title {  
+    margin-bottom: 50px; /* Increased spacing for clarity */ 
+    z-index: 3; /* Ensure it appears above the projects */  
+    font-size: 45px; /* Increased font size for visibility */  
+    color: black; /* Ensure contrast */  
+	text-align: center; 
+}  
+
+.projects-container {  
+    width: 100%;  
+    display: flex; /* Flexbox for alignment */  
+    flex-wrap: wrap; /* Ensure wrapping on small screens */  
+    justify-content: center; /* Center-align projects */  
+    gap: 20px; /* Add spacing between project cards */  
+    padding: 20px 0; /* Top and bottom spacing */  
+    position: relative; /* Layered above cover */  
+    z-index: 2; /* Above the cover */  
+}  
+
+.project {  
+    width: 300px; /* Fixed width for uniform cards */  
+    background-color: #1e1e1e; /* Dark gray background for contrast */  
+    border-radius: 10px; /* Rounded corners */  
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4); /* Subtle shadow */  
+    padding: 15px;  
+    text-align: center;  
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */  
+    position: relative; /* Ensure stacking context */  
+	margin-top: 100px;
+}  
+
+.project:hover {  
+    transform: translateY(-10px); /* Lift on hover */  
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.6); /* Enhanced shadow on hover */  
+}  
+
+.pro-img {  
+    width: 100%; /* Responsive width */  
+    height: auto; /* Maintain aspect ratio */  
+    border-radius: 10px; /* Match project card */  
+    margin-bottom: 15px; /* Spacing below image */  
+}  
+
+.project h2 {  
+    font-size: 18px;  
+    color: white; /* Ensure contrast against dark background */  
+    margin-bottom: 10px;  
+    position: relative;  
+    z-index: 3; /* Ensures title is above everything */  
+}  
+
+.project p {  
+    font-size: 14px;  
+    color: #ccc; /* Subtle text color */  
+    line-height: 1.5;  
+    margin: 0;  
+    z-index: 3; /* Text clarity */  
+    position: relative;  
+}  
+
+.pos2 {  
+    position: relative;  
+    margin: 20px auto 0 auto;  
+    display: inline-block;  
+    background-color: black;  
+    color: white;  
+    padding: 10px 20px;  
+    text-decoration: none;  
+    border-radius: 5px;  
+    transition: background-color 0.3s ease;  
+    z-index: 3;  
+}  
+
+
+
+.svg8 {  
+    position: absolute;  
+    top: -5%;  
+    left: 5%;  
+    width: 300px;  
+    height: 220px;  
+    z-index: 0;  
+    animation: svgEight 10s ease-in-out 0s infinite;  
+    animation-direction: alternate;  
+    pointer-events: none;  
+}  
+
+.svg9 {  
+    position: absolute;  
+    bottom: -5%;  
+    right: 5%;  
+    width: 300px;  
+    height: 280px;  
+    z-index: 0;  
+    animation: svgNine 10s ease-in-out 0s infinite;  
+    animation-direction: alternate;  
+    pointer-events: none;  
+}  
+
+@keyframes svgEight {  
+    from {  
+        transform: translate(0) rotate(0);  
+    }  
+    to {  
+        transform: translateX(800px) rotate(360deg);  
+    }  
+}  
+
+@keyframes svgNine {  
+    from {  
+        transform: translate(0) rotate(0);  
+    }  
+    to {  
+        transform: translateX(-800px) rotate(-360deg);  
+    }  
 }
-.cover{
-	width: 100%;
-	height: 100%;
-	background-color: cadetblue;
-	transform: skewY(-3deg);
-}
-.projects-container{
-	width: 100%;
-	height: 50%;
-	z-index: 1;
-	position: absolute;
-	top: 27%;
-	left: 0;
-}
-.project{
-	width: 30%;
-	height: 100%;
-	padding: 0px 20px;
-	display: inline-block;
-	text-align: center;
-}
-.pro-img{
-	width: 400px;
-	height: 200px;
-	box-shadow: 0px 8px 15px rgba(0,0,0,.4);
-}
-.pos2{
-	position: absolute;
-	bottom: 5%;
-	left: 43.5%;
-}
-.svg8{
-	position: absolute;
-	top: -5%;
-	left: 5%;
-	width: 300px;
-	height: 220px;
-	z-index: 0;
-	animation: svgEight 10s ease-in-out 0s infinite;
-	animation-direction: alternate;
-}
-@keyframes svgEight{
-	from{
-		transform: translate(0) rotate(0);
-	}
-	to{
-		transform: translateX(800px) rotate(360deg);
-	}
-}
-.svg9{
-	position: absolute;
-	bottom: -5%;
-	right: 5%;
-	width: 300px;
-	height: 280px;
-	z-index: 0;
-	animation: svgNine 10s ease-in-out 0s infinite;
-	animation-direction: alternate;
-}
-@keyframes svgNine{
-	from{
-		transform: translate(0) rotate(0);
-	}
-	to{
-		transform: translateX(-800px) rotate(-360deg);
-	}
-}
+
 
 /* contacts */
 #contacts{
@@ -750,228 +817,170 @@ li a:hover{
 
 
 /* Mobile */
+/* Responsive Styles for Screens with Width Between 360px and 1020px */
+@media screen and (min-width: 360px) and (max-width: 1020px) {
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-@media screen and (min-width: 360px) and (max-width: 1020px){
-	h3{
-		font-size: 100px;
-	}
-	.line, .li2, .non{
-		display: none;
-	}
-	.header{
-		height: 8%;
-		width: 30%;
-	}
-	.nav-btn{
-		font-size: 50px;
-		padding: 25px 35px;
-	}
-	.nav {
-		top: 3%;
-	}
-	h1{
-		font-size: 140px;
-	}
-	.title, .para{
-		left: 12%;
-	}
-	.sidebar{
-		height: 68%;
-	}
-	.strip{
-		width: 10%;
-	}
-	h2{
-		font-size: 55px;
-	}
-	.svg4{
-		left: -20%;
-		width: 450px;
-		height: 320px;
-	}
-	.svg5{
-		left: 55%;
-	}
-	.svg2{
-		width: 550px;
-		height: 400px;
-		left: 1%;
-	}
-	.topbar{
-		width: 45%;
-		height: 25%;
-	}
-	.box{
-		width: 75%;
-		top: 25%;
-		left: 15%;
-		height: 63%;
-	}
-	h4{
-		font-size: 45px;
-		padding: 0 5%;
-	}
-	#skills{
-		height: 140vh;
-	}
-	.experience{
-		top: 70%;
-		left: 13%;
-		width: 80%;
-	}
-	.strip3{
-		width: 87%;
-		height: 12%;
-	}
-	.photo{
-		width: 280px;
-		height: 280px;
-	}
-	.bio{
-		left: 37%;
-	}
-	.skills-set{
-		width: 700px;
-		left: 12%;
-		top: 20%;
-	}
-	.h2{
-		font-size: 90px;
-	}
-	.li{
-		font-size: 45px;
-	}
-	.li:before, .li:after{
-		height: 25px;
-	}
-	.svg11{
-		width: 450px;
-		height: 350px;
-	}
-	.svg10{
-		width: 300px;
-		height: 300px;
-		top: 70%;
-		left: 66%;
-	}
-	.education{
-        top: 43%;
-        left: 13%;
-        width: 70%;
-	}
-	.h4{
-		font-size: 50px;
-	}
-	.sidebar3, .sidebar4{
-		height: 90%;
-	}
-	#projects{
-		height: 115vh;
-	}
-	.svg8{
-		width: 400px;
-		height: 320px;
-		top: 2%;
-		left: 2%;
-	}
-	@keyframes svgEight{
-		0% {
-            transform: translate(0) rotate(0);
-        }
-		100% {
-		    transform: translateX(400px) rotate(360deg);
-		}
-	}
-	.svg9{
-		width: 400px;
-		height: 320px;
-		bottom: 2%;
-		right: 10%;
-	}
-	@keyframes svgNine{
-		0% {
-            transform: translate(0) rotate(0);
-        }
-		100% {
-		    transform: translateX(-400px) rotate(-360deg);
-		}
-	}
-	.project-title{
-		top: 3%;
-		left: 30%;
-	}
-	.projects-container{
-		top: 14%;
-	}
-	.project{
-		display: block;
-		width: 100%;
-		height: 50%;
-		padding: 0;
-	}
-	.pro-img{
-		width: 700px;
-		height: 350px;
-	}
-	.pos2{
-		bottom: 3%;
-		left: 30%;
-	}
-	#contacts{
-		height: 50vh;
-	}
-	.contact-me{
-	    width: 90%;
-	    margin: 20% 5%;
+    /* General Text Styling */
+    h3, h4, h2, p, .footer-link, .nav-btn {
+        font-size: 16px; /* Adjust all text sizes for readability */
+        line-height: 1.5;
     }
-    .p2{
-    	font-size: 55px;
+
+    /* Header and Navigation */
+    .header {
+        width: fit-content;
+        text-align: center;
+		position: relative;
+        padding: 10px 0;
     }
-    .svg6{
-    	width: 400px;
-    	height: 400px;
-    	top: 60%;
+	.line{
+		width: fit-content;
+		position: fixed;
+	}
+
+    .nav {
+        display: flex;
+        flex-wrap: wrap; /* Ensure items wrap on smaller screens */
+        justify-content: center;
     }
-    .svg7{
-    	width: 200px;
-    	height: 180px;
-    	right: 7%;
+
+    .nav li, .nav a {
+        font-size: 14px;
+        margin: 5px;
     }
-    .logo{
-    	width: 27%;
+
+    /* Landing Page */
+    .title {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
     }
-    .sidebar2{
-    	width: 100%;
-    	height: 20%;
-    	top: 80%;
+
+    .para {
+        text-align: center;
+        font-size: 16px;
+        padding: 10px 20px;
     }
-    .strip2{
-    	height: 100%;
+
+    /* SVG Elements */
+    .svg2, .svg4, .svg5 {
+        display: none; /* Hide decorative SVGs to simplify UI */
     }
-    p{
-    	padding: 0;
-    	font-size: 35px;
+
+    /* About Section */
+    #about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px 10px;
     }
-    .scroll-indicator{
-    	width: 100px;
-    	height: 100px;
-    	font-size: 80px;
+
+    .box {
+        width: 90%;
+        text-align: justify;
+        margin-bottom: 20px;
     }
-    .link{
-    	top: 15%;
-    	left: 33%;
+
+    .topbar {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
     }
-    .footer-link{
-    	font-size: 60px;
+
+    /* Skills Section */
+    #skills {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 10px;
     }
-    .footer-social-icons ul{
-    	top: 46%;
-    	left: 63%;
+
+    .skills-set {
+        display: flex;
+        flex-wrap: wrap; /* Wrap skills dynamically */
+        justify-content: center;
+        gap: 10px;
     }
-    .footer-social-icons ul li a{
-    	width: 100px;
-    	height: 100px;
-    	font-size: 60px;
-    	line-height: 100px;
+
+    .li {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    /* Projects Section */
+    #projects {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 10px;
+    }
+
+    .projects-container {
+        display: flex;
+        flex-wrap: wrap; /* Wrap projects dynamically */
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .project {
+        flex: 1 1 100%;
+        max-width: 300px;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .pro-img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    /* Contact Section */
+    #contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .contact-me {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    /* Footer Section */
+    #footer {
+        width: 100%;
+        text-align: center;
+        padding: 20px 10px;
+        background: #f5f5f5;
+    }
+
+    .footer-social-icons ul {
+        display: flex;
+        flex-wrap: wrap; /* Ensure icons wrap */
+        justify-content: center;
+        gap: 10px;
+        padding: 0;
+    }
+
+    .footer-social-icons ul li a {
+        font-size: 24px;
+        padding: 5px;
+    }
+
+    .scroll-indicator {
+        text-align: center;
+        margin: 10px auto;
     }
 }
