@@ -36,12 +36,12 @@ To run the website locally, follow these steps:
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/shivpr23/portfolio-website.git
+   git clone https://github.com/shivpr23/Personal_Portfolio.git
    ```
 
 2. **Navigate to the Project Folder:**
    ```bash
-   cd portfolio-website
+   cd Personal_Portfolio
    ```
 
 3. **Open in Your Browser:**
